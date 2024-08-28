@@ -1,0 +1,9 @@
+litp create -t blade -p /infrastructure/systems/blade1 -o system_name='NODE1'
+litp create -t nic -p /infrastructure/systems/blade1/network_interfaces/nic_0 -o interface_name='eth0' macaddress="${BLADE1_MAC}"
+litp create -t disk -p /infrastructure/systems/blade1/disks/disk0 -o name='hd0' size='28G' bootable='true' uuid="${BLADE1_UUID}"
+litp create -t bmc -p /infrastructure/systems/blade1/bmc -o ipaddress="${ENCLOSURE1_IP}" username='root' password_key='key-for-root'
+ 
+litp create -t blade -p /infrastructure/systems/blade2 -o system_name='NODE2'
+litp create -t nic -p /infrastructure/systems/blade2/network_interfaces/nic_0 -o interface_name='eth0' macaddress="${BLADE2_MAC}"
+litp create -t disk -p /infrastructure/systems/blade2/disks/disk0 -o name='hd0' size='28G' bootable='true' uuid="${BLADE2_UUID}"
+litp create -t bmc -p /infrastructure/systems/blade2/bmc -o ipaddress="${ENCLOSURE2_IP}" username='root' password_key='key-for-root'
